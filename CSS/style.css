@@ -17,7 +17,10 @@ body {
 }
 
 .play-button-container {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
 }
 
 .play-button {
@@ -56,10 +59,23 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: calc(1000px / 10);
-  height: calc(1000px / 10);
   font-size: 2rem;
   border: 2px solid lightcoral;
+}
+
+.easy {
+  width: calc(1000px / 10);
+  height: calc(1000px / 10);
+}
+
+.medium {
+  width: calc(1000px / 9);
+  height: calc(1000px / 9);
+}
+
+.hard {
+  width: calc(1000px / 7);
+  height: calc(1000px / 7);
 }
 
 .box-active {

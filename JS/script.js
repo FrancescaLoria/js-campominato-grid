@@ -8,11 +8,29 @@
 const gridElement = document.querySelector(".grid");
 
 function generateBoxes() {
+  // mi sono agganciata alla select e al valore della select
+  const difficultySelect = document.querySelector(".difficulty-select").value;
+  console.log(difficultySelect);
+  // creo variabile numero di box
+  let nubersOfBoxs = 0;
+  let boxClass = "";
+  // setto il numero di box
+  if (difficultySelect == 0) {
+    nubersOfBoxs = 100;
+    boxClass = "easy";
+  } else if (difficultySelect == 1) {
+    nubersOfBoxs = 81;
+    boxClass = "medium";
+  } else {
+    nubersOfBoxs = 49;
+    boxClass = "hard";
+  }
   // se la mia griglia non ha figli allora generelo le box, altrimenti non lo faccio.
   if (!gridElement.firstChild) {
-    for (let i = 1; i <= 100; i++) {
+    for (let i = 1; i <= nubersOfBoxs; i++) {
       const boxElement = document.createElement("div");
       boxElement.classList.add("box");
+      boxElement.classList.add(boxClass);
       boxElement.innerHTML = i;
       // metodo che agg. figli "box" (nel mio caso)
       gridElement.appendChild(boxElement);
